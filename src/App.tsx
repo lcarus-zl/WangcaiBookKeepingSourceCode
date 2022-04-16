@@ -4,13 +4,11 @@ import {HashRouter as Router,Switch,Route,Link,Redirect} from "react-router-dom"
 import Nav from 'components/Nav';
 
 const Wrapper = styled.div`
-  border: 1px solid red;
   height: 100vh;
   display: flex;
   flex-direction: column;
 `
 const Main = styled.div`
-  border: 1px solid green;
   flex-grow: 1;
   overflow: auto;
 ` 
