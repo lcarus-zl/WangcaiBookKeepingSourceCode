@@ -26,8 +26,6 @@ const NoteSection:React.FC = ()=>{
       setNote(refInput.current.value);
     }
   }
-  console.log(note);
-
   return (
     <Wrapper>
       <label >
