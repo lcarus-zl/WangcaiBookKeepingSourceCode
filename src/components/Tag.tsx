@@ -1,7 +1,7 @@
 import React from "react"
 import { useParams,useHistory } from "react-router-dom"
 import styled from "styled-components"
-import { useTags } from "useTags"
+import { useTags } from "hooks/useTags"
 import { Button } from "./Button"
 import { Center } from "./Centers"
 import Icon from "./Icon"
