@@ -3,8 +3,11 @@ import { useParams } from "react-router-dom"
 import styled from "styled-components"
 import { useTags } from "useTags"
 import { Button } from "./Button"
+import { Center } from "./Centers"
 import Icon from "./Icon"
+import { Input } from "./Input"
 import Layout from "./Layout"
+import { Space } from "./Space"
 
 type Params = {
   id:string
@@ -18,6 +21,12 @@ const Topbar = styled.header`
   background: white;
   align-items: center;
 `
+
+const InputWrapper = styled.div`
+  background: white;
+  margin-top: 8px;
+  padding: 0 16px ;
+`
 const Tag:React.FC = ()=>{
   const {findTag} = useTags()
   const { id } = useParams<Params>()
@@ -30,14 +39,16 @@ const Tag:React.FC = ()=>{
         <Icon name="right"></Icon>
       </Topbar>
       <div>
-      <label >
-        <span>标签名</span>
-        <input type="text" placeholder="标签名" />
-      </label>
+      <InputWrapper >
+        <Input label='标签名' type='text' placeholder="标签名"></Input>
+      </InputWrapper>
       </div>
-      <div>
+      <Center>
+        <Space/>
+        <Space/>
+        <Space/>
         <Button>删除标签</Button>
-      </div>
+      </Center>
     </Layout>
   )
 
