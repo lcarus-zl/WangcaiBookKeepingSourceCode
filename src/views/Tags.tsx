@@ -8,7 +8,11 @@ function Tags() {
 
   return (
     <Layout>
-      <h2>标签页面</h2>
+      <ol>
+        {tags.map( tag => 
+          <li key={tag}>{tag}</li>
+        )}
+      </ol>
     </Layout>
   );
 }
