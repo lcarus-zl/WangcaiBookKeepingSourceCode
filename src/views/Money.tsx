@@ -18,7 +18,8 @@ const defaultFormData ={
   tagIds:[] as number[],
   note:'',
   category:'_' as Category,
-  amount:0
+  amount:0,
+  createdAt:''
 }
 function Money() {
   const [selected,setSelected] = useState(defaultFormData)
@@ -30,9 +31,10 @@ function Money() {
     })
   }
   const submit =()=>{
-    addRecord(selected)
-    alert('保存成功')
-    setSelected(defaultFormData)
+    if(addRecord(selected)){
+      alert('保存成功')
+      setSelected(defaultFormData)
+    }
   }
   return (
     <MyLayout>
