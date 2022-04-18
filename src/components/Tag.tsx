@@ -1,10 +1,22 @@
 import React from "react"
+import { useParams } from "react-router-dom"
+import { useTags } from "useTags"
 
+type Params = {
+  id:string
+}
 const Tag:React.FC = ()=>{
+  const {findTag} = useTags()
+  const { id } = useParams<Params>()
+  const tag = findTag(parseInt(id))
   return(
-    <div></div>
+    <div>{tag.name}</div>
   )
 
 }
 
 export {Tag}
+
+function fuck(fuck: any) {
+  throw new Error("Function not implemented.")
+}
