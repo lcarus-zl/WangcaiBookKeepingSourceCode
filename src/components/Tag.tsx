@@ -1,5 +1,5 @@
 import React from "react"
-import { useParams } from "react-router-dom"
+import { useParams,useHistory } from "react-router-dom"
 import styled from "styled-components"
 import { useTags } from "useTags"
 import { Button } from "./Button"
@@ -47,13 +47,16 @@ const Tag:React.FC = ()=>{
       </Center>
     </div>
   )
-
+  const history = useHistory()
+  const onClickBack = ()=>{
+    history.goBack()
+  }
   return(
     <Layout>
       <Topbar>
-        <Icon name="left"/>
+        <Icon name="left" onClick={onClickBack}/>
         <span>编辑标签</span>
-        <Icon name="right"></Icon>
+        <Icon name={""}/>
       </Topbar>
         { tag ?  tagContent(tag): <Center>tag 不存在</Center>}
     </Layout>
