@@ -1,7 +1,7 @@
 
 import { useEffect, useRef } from "react"
 
-const useUpdate = (fn:()=>void,deps:any[])=>{
+const useUpdate = (fn:()=>void,dependency:any[])=>{
 
   const count = useRef(0)
   useEffect(()=>{
@@ -11,6 +11,6 @@ const useUpdate = (fn:()=>void,deps:any[])=>{
     if(count.current > 1 ){
       fn()
     }
-  },deps)//不可变数据
+  },[fn,dependency])//不可变数据
 }
 export {useUpdate}
