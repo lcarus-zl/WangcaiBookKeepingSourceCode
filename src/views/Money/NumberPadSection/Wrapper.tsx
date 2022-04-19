@@ -1,7 +1,7 @@
  
 import styled from "styled-components"
  const Wrapper = styled.section`
-display:flex;
+  display:flex;
   flex-direction: column;
   > .output{
     background:white;

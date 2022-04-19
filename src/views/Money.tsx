@@ -11,7 +11,7 @@ import { TagsSection } from "./Money/TagsSection";
 const MyLayout = styled(Layout)`
   display: flex;
   flex-direction: column;
-`
+`;
 type Category = '-' | '+'
 
 const defaultFormData ={
@@ -41,7 +41,6 @@ function Money() {
   }
   return (
     <MyLayout>
-      {selected.note}
       <TagsSection value={selected.tagIds} onChange={ tagIds => onChange({tagIds})}/>
       <NoteSection value={selected.note} onChange={ note => onChange({note})}/> 
       <CategoryWrapper>
