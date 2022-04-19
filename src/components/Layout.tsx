@@ -18,6 +18,7 @@ const Main = styled.div`
 type Props ={
   className?:string
   scrollTop?:number
+  children:any
 }
 const Layout:React.FC<Props> = (props)=>{
   const mainRef = useRef<HTMLDivElement>(null)
