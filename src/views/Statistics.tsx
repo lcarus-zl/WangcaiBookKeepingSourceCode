@@ -31,7 +31,7 @@ const Header = styled.h3`
 
 function Statistics() {
   const [category,setCategory] = useState<'-' | '+'>('-')
-  const {records} = useRecords()
+  const {records,updateTagNote} = useRecords()
   const {getName} = useTags()
   const hash:{[K:string]:RecordItem[]} = {}
   const selectedRecords = records.filter(r => r.category === category)
@@ -60,10 +60,9 @@ function Statistics() {
           <Header>{date}</Header>
           <div>
             {records.map(r => {
-              console.log(records);
-              
-            return <Item key={r.createdAt}>
-              <div className="tags oneLine">
+              // console.log(records);
+            return <Item key={r.createdAt} onClick={ ()=> updateTagNote(r)}>
+              <div className="tags oneLine" >
                 {r.tagIds
                   .map(tagId => <span key={tagId} >{getName(tagId)}</span>)
                   .reduce((result,span,index,array) => 

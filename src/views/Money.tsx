@@ -17,7 +17,7 @@ type Category = '-' | '+'
 const defaultFormData ={
   tagIds:[] as number[],
   note:'',
-  category:'_' as Category,
+  category:'-' as Category,
   amount:0,
   createdAt:''
 }

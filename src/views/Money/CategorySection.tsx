@@ -11,7 +11,7 @@ const Wrapper = styled.section`
       padding: 16px 0;
       position:relative;
       &.selected::after{
-        content: '';
+        content:'';
         display:block; 
         height: 3px;
         background:#333;
@@ -34,9 +34,10 @@ const CategorySection:React.FC<Props>=(props)=>{
   return(
     <Wrapper>
       <ul>
-        {categoryList.map( c =>
-          <li key={c} className={category === c ? "selected" : ''}
-          onClick={()=>{props.onChange(c)}}>{categoryMap[c]}</li>
+        {categoryList.map( c => { 
+          return <li key={c} className={category === c ? "selected" : ''}
+              onClick={() => {props.onChange(c)}}>{categoryMap[c]}</li>
+        }
         )}
       </ul>
     </Wrapper>

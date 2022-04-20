@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import  { useEffect, useState } from "react"
 import { useUpdate } from "./useUpdate"
 
  export type RecordItem ={
@@ -25,13 +25,21 @@ const useRecords = ()=>{
     if(newRecord.tagIds.length === 0){
       alert('请选择标签')
       return false 
-
     }
     const record = {...newRecord,createdAt:(new Date()).toISOString()}
     setRecords([...records, record])
     return true
   }
-  
-  return {records,addRecord}
+  const updateTagNote = (record:RecordItem) =>{
+    const newNote:string = window.prompt('请输入新的备注',record.note) || '未备注';
+    const newRecords = records
+    for(let i = 0;i<records.length;i++){
+      if(records[i] === record){
+        newRecords[i].note = newNote
+        setRecords([...records])
+      }
+    }
+  }
+  return {records,addRecord,updateTagNote}
 }
 export {useRecords}

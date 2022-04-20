@@ -13,4 +13,5 @@ const useUpdate = (fn:()=>void,dependency:any[])=>{
     }
   },[fn,dependency])//不可变数据
 }
+
 export {useUpdate}
