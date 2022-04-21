@@ -1,3 +1,4 @@
+
 import React, { useState }  from "react";
 import { generateOutput } from "./NumberPadSection/generateOutput";
 import { Wrapper } from "./NumberPadSection/Wrapper";
@@ -31,7 +32,7 @@ const NumberPadSection:React.FC<Props> = (props)=>{
       if(props.onOk) props.onOk()
       return
     }
-    if('0123456789.'.split('').concat(['删除','清空']).indexOf(text) >=0){
+    if('0123456789.'.split('').concat(['删除','C']).indexOf(text) >=0){
       setOutput(generateOutput(text,output));
     }
   }
@@ -49,7 +50,7 @@ const NumberPadSection:React.FC<Props> = (props)=>{
         <button>4</button>
         <button>5</button>
         <button>6</button>
-        <button>清空</button>
+        <button>C</button>
         <button>7</button>
         <button>8</button>
         <button>9</button>

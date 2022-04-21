@@ -25,9 +25,9 @@ box-shadow: 0 0 3px rgba(0,0,0,0.25);
           height: 24px;
         }
         &.selected{
-          color: #909399;
+          color: red;
           .icon{
-
+            color: red;
           }
         }
       }
@@ -45,13 +45,13 @@ const Nav = ()=>{
                 </NavLink>
             </li>
             <li>
-              <NavLink to="/money">
+              <NavLink to="/money" activeClassName='selected'>
               <Icon name='money'></Icon>
                 记账页
                 </NavLink>
             </li>
             <li>
-              <NavLink to="/statistics">
+              <NavLink to="/statistics" activeClassName='selected'>
               <Icon name='chart'></Icon>
                 统计页
                 </NavLink>

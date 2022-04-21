@@ -18,7 +18,7 @@ import styled from "styled-components"
       &.ok{ height: 128px; float: right; }
       &.zero{ width: 50%; }
       &:nth-child(1){
-        background:#f2f2f2;
+        background:#f5f8f9;
       }
       &:nth-child(2),
       &:nth-child(5) {
