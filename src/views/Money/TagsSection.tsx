@@ -42,7 +42,6 @@ const TagsSection : React.FC<Props> = (props)=>{
   const selectedTagIds = props.value 
 
   
-
   const onToggleTag =(tagId:number)=>{
     const index = selectedTagIds.indexOf(tagId);
     if(index >= 0){
